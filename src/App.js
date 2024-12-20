@@ -16,7 +16,7 @@ function App() {
         </div>
       </div>
       <div className="text-section">
-        <h1>¡Bienvenido!</h1>
+        <h1>¡Bienvenido/a!</h1>
         <p>
           En nuestra plataforma te vamos a brindar la oportunidad de hacer la diferencia en tu comunidad.
           Si eres residente de la ciudad de Loja, aquí podrás denunciar problemas y compartir información sobre tu barrio.
