@@ -1,7 +1,14 @@
 import React from 'react';
 import './App.css'; // Asegúrate de crear este archivo para los estilos
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+  const navigate = useNavigate();
+
+  const handleNextClick = () => {
+    navigate('../Content/pages/pagina_inicio');
+  };
+
   return (
     <div className="container">
       <div className="image-section">
@@ -31,7 +38,9 @@ function App() {
         <p>
           Únete a nosotros para mejorar nuestra comunidad. Denuncia y construye el buen vivir en tu barrio.
         </p>
-        <button className="next-button">Siguiente</button>
+        <button className="next-button" onClick={handleNextClick}>
+          Siguiente
+        </button>
       </div>
     </div>
   );

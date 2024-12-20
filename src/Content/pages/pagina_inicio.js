@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NextPage() {
+function pagina_inicio() {
   return (
     <div>
       <h1>¡Bienvenido a la siguiente página!</h1>
@@ -9,4 +9,5 @@ function NextPage() {
   );
 }
 
-export default NextPage;
+
+export default pagina_inicio;
