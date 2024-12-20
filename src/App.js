@@ -17,10 +17,7 @@ function App() {
           alt="Puerta de la Ciudad"
           className="background-image"
         />
-        <div className="logo-section">
-          <img src="/images/logo.png" alt="Logo Municipio" className="logo" />
-          <h2>MUNICIPIO DEL CANTON LOJA</h2>
-        </div>
+       
       </div>
       <div className="text-section">
         <h1>¡Bienvenido/a!</h1>
