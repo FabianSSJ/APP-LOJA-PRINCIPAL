@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'; // Asegúrate de crear este archivo para los estilos
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="container">
+      <div className="image-section">
+        <img
+          src="/images/fondo.jpg"
+          alt="Puerta de la Ciudad"
+          className="background-image"
+        />
+        <div className="logo-section">
+          <img src="/images/logo.png" alt="Logo Municipio" className="logo" />
+          <h2>MUNICIPIO DEL CANTON LOJA</h2>
+        </div>
+      </div>
+      <div className="text-section">
+        <h1>¡Bienvenido!</h1>
         <p>
-          Hola React
+          En nuestra plataforma te vamos a brindar la oportunidad de hacer la diferencia en tu comunidad.
+          Si eres residente de la ciudad de Loja, aquí podrás denunciar problemas y compartir información sobre tu barrio.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>
+          ¿Hay un bache en la calle de tu barrio y necesita ser arreglado de forma urgente? 
+          ¿Un poste de luz dejo de funcionar? ¿Algún problema en cuanto a seguridad?
+        </p>
+        <p>
+          Este es el lugar para que puedas hacerlo conocer.
+        </p>
+        <p>
+          Únete a nosotros para mejorar nuestra comunidad. Denuncia y construye bienestar en tu barrio.
+        </p>
+        <button className="next-button">Siguiente</button>
+      </div>
     </div>
   );
 }
