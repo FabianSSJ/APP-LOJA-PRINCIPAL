@@ -9,7 +9,7 @@ function AppRoutes() {
     <Router>
       <Routes>
         <Route path="/" element={<App />} /> {/* Página principal */}
-        <Route path="../Content/pages/pagina_inicio" element={<pagina_inicio />} /> {pagina_inicio}
+        <Route path="/inicio" element={pagina_inicio} />
       </Routes>
     </Router>
   );

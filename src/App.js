@@ -6,7 +6,7 @@ function App() {
   const navigate = useNavigate();
 
   const handleNextClick = () => {
-    navigate('../Content/pages/pagina_inicio');
+    navigate('/inicio');
   };
 
   return (
