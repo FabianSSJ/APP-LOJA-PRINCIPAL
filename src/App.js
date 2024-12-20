@@ -29,7 +29,7 @@ function App() {
           Este es el lugar para que puedas hacerlo conocer.
         </p>
         <p>
-          Únete a nosotros para mejorar nuestra comunidad. Denuncia y construye bienestar en tu barrio.
+          Únete a nosotros para mejorar nuestra comunidad. Denuncia y construye el buen vivir en tu barrio.
         </p>
         <button className="next-button">Siguiente</button>
       </div>
