@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from '../App'; 
-import PaginaInicio from '../Content/pages/Pagina_inicio';
+import PaginaInicio from '../Content/pages/paginainicio';
 
 function AppRoutes() {
   return (
