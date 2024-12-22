@@ -1,16 +1,15 @@
-/* Barra de navegación */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2080da; /* Fondo oscuro */
+    background-color: #860e0e;
     padding: 15px 30px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 4px 12px rgba(126, 73, 73, 0.1); /* Sombra suave */
+    box-shadow: 0 4px 12px rgba(126, 73, 73, 0.1);
   }
   
   /* Estilo para el menú de la barra */
@@ -42,7 +41,7 @@
   
   /* Estilo para el botón de login */
   .navbar-menu button {
-    background-color: #2926d6;
+    background-color: #ff0000;
     color: white;
     padding: 10px 20px;
     border: none;
