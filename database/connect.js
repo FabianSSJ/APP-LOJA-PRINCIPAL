@@ -3,7 +3,6 @@ const { Sequelize } = require("sequelize");
 const sequelize = new Sequelize("PROYECTOGRUPAL", "root", "", {
     host: "localhost",
     dialect: "mysql",
-    logging: false,
 });
 
 (async () => {
