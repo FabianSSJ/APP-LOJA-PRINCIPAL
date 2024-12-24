@@ -38,10 +38,13 @@ function BarraDeNavegacion() {
   return (
     <nav className="navbar">
       <div className="navbar-menu">
-        <a href="#inicio">Inicio</a>
-        <a href="#denuncias">Denuncias</a>
-        <a href="#negocios">Negocios</a>
-        <button onClick={toggleLoginForm}>
+        <a href="#inicio" className="navbar-item">Inicio</a>
+        <span className="navbar-divider" />
+        <a href="#denuncias" className="navbar-item">Denuncias</a>
+        <span className="navbar-divider" />
+        <a href="#negocios" className="navbar-item">Negocios</a>
+        <span className="navbar-divider" />
+        <button onClick={toggleLoginForm} className="navbar-item">
           {isLoggedIn ? 'Cerrar sesión' : 'Ingresar'}
         </button>
       </div>
