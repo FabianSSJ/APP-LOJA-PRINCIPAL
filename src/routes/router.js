@@ -1,17 +1,17 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import App from '../App'; 
-import PaginaInicio from '../Content/pages/paginainicio';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import CrearUsuario from "../pages/crearusuario";
+import PaginaInicio from "../pages/PaginaInicio";
+import Bienvenida from "../pages/Bienvenida"; // Nuevo componente para la página de bienvenida
 
-function AppRoutes() {
+const AppRouter = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<App />} /> 
-        <Route path="/inicio" element={<PaginaInicio />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Bienvenida />} />
+      <Route path="/inicio" element={<PaginaInicio />} />
+      <Route path="/crear-usuario" element={<CrearUsuario />} />
+    </Routes>
   );
-}
+};
 
-export default AppRoutes;
+export default AppRouter;

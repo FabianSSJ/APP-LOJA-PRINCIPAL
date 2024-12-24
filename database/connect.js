@@ -1,6 +1,6 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("app-loja", "root", "", {
+const sequelize = new Sequelize("PROYECTOGRUPAL", "root", "", {
     host: "localhost",
     dialect: "mysql",
     logging: false,
@@ -9,7 +9,7 @@ const sequelize = new Sequelize("app-loja", "root", "", {
 (async () => {
     try {
         await sequelize.authenticate();
-        console.log("Conexión a la base de datos exitosa.");
+        console.log("Se Conecto a la base de datos");
     } catch (error) {
         console.error("Error al conectar con la base de datos:", error);
     }

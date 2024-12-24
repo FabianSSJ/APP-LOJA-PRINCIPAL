@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './BarraDeNavegacion.css'; // Importar los estilos
+import { Link } from 'react-router-dom';
+import './BarraDeNavegacion.css';
 
 function BarraDeNavegacion() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -43,6 +44,8 @@ function BarraDeNavegacion() {
         <a href="#denuncias" className="navbar-item">Denuncias</a>
         <span className="navbar-divider" />
         <a href="#negocios" className="navbar-item">Negocios</a>
+        <span className="navbar-divider" />
+        <Link to="/crear-usuario" className="navbar-item">Crear Usuario</Link>
         <span className="navbar-divider" />
         <button onClick={toggleLoginForm} className="navbar-item">
           {isLoggedIn ? 'Cerrar sesión' : 'Ingresar'}
