@@ -6,7 +6,7 @@
     display: flex; /* Alinea los elementos horizontalmente */
     justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center; /* Centra los elementos verticalmente */
-    background-color: #3498db; /* Color de fondo rojo vibrante */
+    background-color: #ff0000; /* Color de fondo rojo vibrante */
     padding: 15px 30px; /* Espaciado interno de la barra */
     position: fixed; /* Mantiene la barra fija en la parte superior */
     top: 0;
@@ -40,7 +40,7 @@
 
 /* Efecto hover para los ítems de la barra */
 .navbar-item:hover {
-    background-color: #8ac5ef; /* Cambia el fondo al pasar el ratón */
+    background-color: #7e0000; /* Cambia el fondo al pasar el ratón */
     transform: translateY(-3px); /* Eleva ligeramente el ítem */
     /* Cambia el color del texto a blanco */
 }
@@ -94,7 +94,7 @@
 .login-form-container button {
     width: 100%; /* Botón ocupa todo el ancho */
     padding: 12px; /* Espaciado interno */
-    background-color: #3498db; /* Fondo rojo vibrante */
+    background-color: #ff0000; /* Fondo rojo vibrante */
     color: white; /* Color de texto blanco */
     border: none; /* Sin bordes adicionales */
     border-radius: 5px; /* Bordes redondeados */
@@ -106,7 +106,7 @@
 
 /* Efecto hover para el botón del formulario */
 .login-form-container button:hover {
-    background-color: #1bc424; /* Cambia el color del fondo al pasar el ratón */
+    background-color: #7e0000; /* Cambia el color del fondo al pasar el ratón */
 }
 
 /* Botón de login integrado con los ítems de la barra */
