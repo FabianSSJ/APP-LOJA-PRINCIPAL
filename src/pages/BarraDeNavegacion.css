@@ -6,7 +6,7 @@
     display: flex; /* Alinea los elementos horizontalmente */
     justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center; /* Centra los elementos verticalmente */
-    background-color: #ff0000; /* Color de fondo rojo vibrante */
+    background-color: #3498db; /* Color de fondo rojo vibrante */
     padding: 15px 30px; /* Espaciado interno de la barra */
     position: fixed; /* Mantiene la barra fija en la parte superior */
     top: 0;
