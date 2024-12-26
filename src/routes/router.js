@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import CrearUsuario from "../pages/crearusuario";
+import CrearUsuario from '../pages/CrearUsuario'; 
 import PaginaInicio from "../pages/PaginaInicio";
 import Bienvenida from "../pages/Bienvenida"; // Nuevo componente para la página de bienvenida
 

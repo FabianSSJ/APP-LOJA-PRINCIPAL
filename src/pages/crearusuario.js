@@ -1,110 +1,186 @@
 import React, { useState } from 'react';
+import { FaUser, FaLock, FaEnvelope, FaVenusMars, FaMapMarkerAlt } from 'react-icons/fa';
+import './CrearUsuario.css';
 
-const CrearUsuario = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [gender, setGender] = useState('');
-  const [idNeighborhood, setIdNeighborhood] = useState('');
+const CrearUsuario: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    lastName: '',
+    email: '',
+    username: '',
+    password: '',
+    gender: '',
+    idNeighborhood: '',
+  });
 
-  const handleSubmit = async (e) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const usuario = { username, password, name, last_name: lastName, email, gender, idneighborhood: idNeighborhood };
+    setIsLoading(true);
+    setError('');
+    setSuccess('');
 
     try {
       const response = await fetch('http://localhost:5000/api/usuarios', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(usuario),
+        body: JSON.stringify({
+          ...formData,
+          last_name: formData.lastName,
+          idneighborhood: formData.idNeighborhood
+        }),
       });
 
       if (response.ok) {
         const data = await response.json();
-        alert(`Usuario creado: ${JSON.stringify(data.usuario)}`);
-        setUsername('');
-        setPassword('');
-        setName('');
-        setLastName('');
-        setEmail('');
-        setGender('');
-        setIdNeighborhood('');
+        setSuccess(`¡Bienvenido a LojaComunidad, ${data.usuario.name}! Tu cuenta ha sido creada exitosamente.`);
+        setFormData({
+          name: '',
+          lastName: '',
+          email: '',
+          username: '',
+          password: '',
+          gender: '',
+          idNeighborhood: '',
+        });
       } else {
-        alert('Error al crear usuario');
+        setError('Error al crear usuario. Por favor, intenta de nuevo.');
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Error al conectar con el servidor');
+      setError('Error al conectar con el servidor. Por favor, verifica tu conexión e intenta de nuevo.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <div>
-      <h2>Crear Usuario</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nombre de Usuario:</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
+    <div className="crear-usuario-container">
+      <h2>Únete a LojaComunidad</h2>
+      <p className="subtitle">Crea tu cuenta y conecta con tu comunidad</p>
+      {error && <div className="error-message">{error}</div>}
+      {success && <div className="success-message">{success}</div>}
+      <form onSubmit={handleSubmit} className="crear-usuario-form">
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="name">Nombre</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="Tu nombre"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="lastName">Apellido</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+              placeholder="Tu apellido"
+            />
+          </div>
         </div>
-        <div>
-          <label>Contraseña:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Nombre:</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Apellido:</label>
-          <input
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Email:</label>
+        <div className="form-group">
+          <label htmlFor="email">
+            <FaEnvelope /> Email
+          </label>
           <input
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            placeholder="tu@email.com"
           />
         </div>
-        <div>
-          <label>Género:</label>
+        <div className="form-group">
+          <label htmlFor="username">
+            <FaUser /> Nombre de Usuario
+          </label>
           <input
             type="text"
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
+            id="username"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+            placeholder="Elige un nombre de usuario único"
           />
         </div>
-        <div>
-          <label>Id de Barrio:</label>
+        <div className="form-group">
+          <label htmlFor="password">
+            <FaLock /> Contraseña
+          </label>
           <input
-            type="number"
-            value={idNeighborhood}
-            onChange={(e) => setIdNeighborhood(e.target.value)}
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+            placeholder="Crea una contraseña segura"
           />
         </div>
-        <button type="submit">Crear Usuario</button>
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="gender">
+              <FaVenusMars /> Género
+            </label>
+            <select
+              id="gender"
+              name="gender"
+              value={formData.gender}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Selecciona</option>
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+              <option value="otro">Otro</option>
+              <option value="prefiero-no-decir">Prefiero no decir</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="idNeighborhood">
+              <FaMapMarkerAlt /> Barrio
+            </label>
+            <input
+              type="number"
+              id="idNeighborhood"
+              name="idNeighborhood"
+              value={formData.idNeighborhood}
+              onChange={handleChange}
+              required
+              placeholder="ID de tu barrio"
+            />
+          </div>
+        </div>
+        <button type="submit" className="btn-submit" disabled={isLoading}>
+          {isLoading ? 'Creando cuenta...' : 'Crear Cuenta'}
+        </button>
       </form>
+      <p className="terms-text">
+        Al crear una cuenta, aceptas nuestros <a href="/terminos">Términos de Servicio</a> y <a href="/privacidad">Política de Privacidad</a>.
+      </p>
     </div>
   );
 };

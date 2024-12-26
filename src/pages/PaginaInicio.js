@@ -25,7 +25,7 @@ const PaginaInicio: React.FC = () => {
             </div>
           </div>
           <div className="inicio-image">
-            <img src="/community-illustration.svg" alt="Ilustración de la comunidad de Loja" />
+          <img src="/images/image.jpg" alt="Descripción de la imagen" />
           </div>
         </section>
 

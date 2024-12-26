@@ -40,7 +40,7 @@
 
 /* Efecto hover para los ítems de la barra */
 .navbar-item:hover {
-    background-color: #7e0000; /* Cambia el fondo al pasar el ratón */
+    background-color: #90bae4; /* Cambia el fondo al pasar el ratón */
     transform: translateY(-3px); /* Eleva ligeramente el ítem */
     /* Cambia el color del texto a blanco */
 }
@@ -94,7 +94,7 @@
 .login-form-container button {
     width: 100%; /* Botón ocupa todo el ancho */
     padding: 12px; /* Espaciado interno */
-    background-color: #ff0000; /* Fondo rojo vibrante */
+    background-color: #3498db; /* Fondo rojo vibrante */
     color: white; /* Color de texto blanco */
     border: none; /* Sin bordes adicionales */
     border-radius: 5px; /* Bordes redondeados */
@@ -106,7 +106,7 @@
 
 /* Efecto hover para el botón del formulario */
 .login-form-container button:hover {
-    background-color: #7e0000; /* Cambia el color del fondo al pasar el ratón */
+    background-color: #18d121; /* Cambia el color del fondo al pasar el ratón */
 }
 
 /* Botón de login integrado con los ítems de la barra */
